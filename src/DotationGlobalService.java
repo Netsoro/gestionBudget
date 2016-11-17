@@ -95,5 +95,15 @@ public class DotationGlobalService {
     public void setListeRubrique(List<Rubrique> listeRubrique) {
         this.listeRubrique = listeRubrique;
     }
+
+    public List<DotationRubriqueService> getListeDotationRS() {
+        return listeDotationRS;
+    }
+
+    public void setListeDotationRS(List<DotationRubriqueService> listeDotationRS) {
+        this.listeDotationRS = listeDotationRS;
+    }
+    
+    
     
 }

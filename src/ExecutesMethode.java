@@ -25,7 +25,7 @@ public class ExecutesMethode {
                 
        // System.out.println(s1.getListeDotationService().get(0));
         
-        System.out.println(s1.getDotationGlobalServiceByYear(2018));
+        System.out.println(s1.getDotationGlobalServiceByYear(2016));
 
     }
 }
