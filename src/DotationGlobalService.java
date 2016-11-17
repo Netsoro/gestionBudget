@@ -33,11 +33,13 @@ public class DotationGlobalService {
         listeDotationRS = new ArrayList<DotationRubriqueService>();
     }
 
-    
     @Override
-    public String toString(){
-        return "Année de la dotation : "+annee+"\nMontant de la dotation : "+dotationGS;
+    public String toString() {
+        return "DotationGlobalService{" + "annee=" + annee + ", dotationGS=" + dotationGS + '}';
     }
+
+    
+  
     /**
      * @return the annee
      */
