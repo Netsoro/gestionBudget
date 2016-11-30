@@ -32,6 +32,14 @@ public class DotationGlobalService {
         listeRubrique = new ArrayList<Rubrique>();
         listeDotationRS = new ArrayList<DotationRubriqueService>();
     }
+    
+    public void augmentMontantDotGS(float supp){
+        if(supp > 0) this.dotationGS+= supp;
+    }
+    
+    public void diminuerMontantDotGS(float malus){
+        if(this.dotationGS >= malus) this.dotationGS-=malus;
+    }
 
     @Override
     public String toString() {
@@ -76,34 +84,15 @@ public class DotationGlobalService {
     }
 
     /**
-     * @param listRallongeDs the listRallongeDs to set
-     */
-    public void setListRallongeDs(List<RallongeDotationServ> listRallongeDs) {
-        this.listRallongeDs = listRallongeDs;
-    }
-
-    /**
      * @return the listeRubrique
      */
     public List<Rubrique> getListeRubrique() {
         return listeRubrique;
     }
 
-    /**
-     * @param listeRubrique the listeRubrique to set
-     */
-    public void setListeRubrique(List<Rubrique> listeRubrique) {
-        this.listeRubrique = listeRubrique;
-    }
 
     public List<DotationRubriqueService> getListeDotationRS() {
         return listeDotationRS;
     }
-
-    public void setListeDotationRS(List<DotationRubriqueService> listeDotationRS) {
-        this.listeDotationRS = listeDotationRS;
-    }
-    
-    
     
 }

@@ -80,12 +80,6 @@ public class Service {
         return listeDotationService;
     }
 
-    /**
-     * @param listeDotationService the listeDotationService to set
-     */
-    public void setListeDotationService(List<DotationGlobalService> listeDotationService) {
-        this.listeDotationService = listeDotationService;
-    }
     
     @Override
     public String toString(){

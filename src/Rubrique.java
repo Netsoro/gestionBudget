@@ -16,10 +16,10 @@ public class Rubrique {
   private int codeR;
   private String  LibR;
   private String descR;
-  private List<DotationGlobalService> listeDotationServ;
-  private List<DotationRubriqueService> listeDotationRespServ;
+  private final List<DotationGlobalService> listeDotationServ;
+  private final List<DotationRubriqueService> listeDotationRespServ;
 
-    public Rubrique(int codeR, String LibR, String descR, List<DotationRubriqueService> listeDotationRespServ) {
+    public Rubrique(int codeR, String LibR, String descR) {
         this.codeR = codeR;
         this.LibR = LibR;
         this.descR = descR;
@@ -82,12 +82,12 @@ public class Rubrique {
     public List<DotationGlobalService> getListeDotationServ() {
         return listeDotationServ;
     }
-
-    /**
-     * @param listeDotationServ the listeDotationServ to set
+    
+     /**
+     * @return the listeDotationServ
      */
-    public void setListeDotationServ(List<DotationGlobalService> listeDotationServ) {
-        this.listeDotationServ = listeDotationServ;
+    public List<DotationRubriqueService>  getListeDotationRespServ() {
+        return listeDotationRespServ;
     }
   
 }

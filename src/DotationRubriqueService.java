@@ -45,10 +45,4 @@ public class DotationRubriqueService {
     public List<RallongeDotationServ> getListeRallongeDotationS() {
         return listeRallongeDotationS;
     }
-
-    public void setListeRallongeDotationS(List<RallongeDotationServ> listeRallongeDotationS) {
-        this.listeRallongeDotationS = listeRallongeDotationS;
-    }
-    
-    
 }
