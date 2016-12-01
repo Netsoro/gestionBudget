@@ -13,67 +13,67 @@ import java.util.List;
  * @author 21611856
  */
 public class DotationGlobalService {
-    private int annee;
-    private float dotationGS;
-    private List<RallongeDotationServ> listRallongeDs;
-    private List<Rubrique> listeRubrique;
-    private List<DotationRubriqueService> listeDotationRS;
+    private int anneeDS;
+    private float montantDS;
+    private boolean etatDS;
+
+ 
+    private final List<RallongeDotationServ> listRallongeDs;
+    private final List<DotationRubrique> listeDotationRS;
     
     public DotationGlobalService(){
         listRallongeDs = new ArrayList<RallongeDotationServ>();
-        listeRubrique = new ArrayList<Rubrique>();
-        listeDotationRS = new ArrayList<DotationRubriqueService>();
+        listeDotationRS = new ArrayList<DotationRubrique>();
     }
 
     public DotationGlobalService(int annee ,float dotationGS ){
-        this.annee = annee;
-        this.dotationGS = dotationGS;
+        this.anneeDS = annee;
+        this.montantDS = dotationGS;
         listRallongeDs = new ArrayList<RallongeDotationServ>();
-        listeRubrique = new ArrayList<Rubrique>();
-        listeDotationRS = new ArrayList<DotationRubriqueService>();
+        listeDotationRS = new ArrayList<DotationRubrique>();
     }
     
     public void augmentMontantDotGS(float supp){
-        if(supp > 0) this.dotationGS+= supp;
+        if(supp > 0) this.montantDS+= supp;
     }
     
     public void diminuerMontantDotGS(float malus){
-        if(this.dotationGS >= malus) this.dotationGS-=malus;
+        if(this.montantDS >= malus) this.montantDS-=malus;
     }
 
     @Override
     public String toString() {
-        return "DotationGlobalService{" + "annee=" + annee + ", dotationGS=" + dotationGS + '}';
+        return "DotationGlobalService{" + "annee=" + anneeDS + ", dotationGS=" + montantDS + '}';
     }
 
     
   
     /**
-     * @return the annee
+     * @return the anneeDS
      */
-    public int getAnnee() {
-        return annee;
+    public int getAnneeDS() {
+        return anneeDS;
     }
 
     /**
-     * @param annee the annee to set
+     * @param anneeDS the anneeDS to set
      */
-    public void setAnnee(int annee) {
-        this.annee = annee;
+    public void setAnneeDS(int anneeDS) {
+        this.anneeDS = anneeDS;
     }
 
     /**
-     * @return the dotationGS
+     * @return the montantDS
      */
-    public float getDotationGS() {
-        return dotationGS;
+    public float getMontantDS() {
+        return montantDS;
     }
 
     /**
-     * @param dotationGS the dotationGS to set
+     * @param montantDS the montantDS to set
      */
-    public void setDotationGS(float dotationGS) {
-        this.dotationGS = dotationGS;
+    public void setMontantDS(float montantDS) {
+        this.montantDS = montantDS;
     }
 
     /**
@@ -83,16 +83,23 @@ public class DotationGlobalService {
         return listRallongeDs;
     }
 
-    /**
-     * @return the listeRubrique
-     */
-    public List<Rubrique> getListeRubrique() {
-        return listeRubrique;
+
+
+
+    public List<DotationRubrique> getListeDotationRS() {
+        return listeDotationRS;
+    }
+    
+    public void afficher(){
+        System.out.println("  "+ this.anneeDS + " - " + this.getMontantDS()+ " ");
+    }
+    
+    public boolean isEtatDS() {
+        return etatDS;
     }
 
-
-    public List<DotationRubriqueService> getListeDotationRS() {
-        return listeDotationRS;
+    public void setEtatDS(boolean etatDS) {
+        this.etatDS = etatDS;
     }
     
 }

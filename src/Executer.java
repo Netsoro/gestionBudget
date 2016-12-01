@@ -30,14 +30,14 @@ public class Executer {
         d1 = new DotationGlobalService();
         d2 = new DotationGlobalService();
         
-        d1.setAnnee(2016);
+        d1.setAnneeDS(2016);
 
      //   d1.annee = 2016;
-        d1.setDotationGS(1000);
+        d1.setMontantDS(1000);
         
          
-        d2.setAnnee(2017);
-        d2.setDotationGS(1100);
+        d2.setAnneeDS(2017);
+        d2.setMontantDS(1100);
         
         s1.getListeDotationService().add(d1);
         s1.getListeDotationService().add(d2);

@@ -12,20 +12,21 @@ import java.util.Date;
  * @author 21611856
  */
 public class RallongeDotationServ {
-    float rallongeDS;
-    Date dateRallonge;
+    float montantRallongeDS;
+    private Date dateRallonge;
+    private boolean etatRallonge;
 
     public RallongeDotationServ(float rallongeDS, Date dateRallonge) {
-        this.rallongeDS = rallongeDS;
+        this.montantRallongeDS = rallongeDS;
         this.dateRallonge = dateRallonge;
     }
 
-    public float getRallongeDS() {
-        return rallongeDS;
+    public float getMontantRallongeDS() {
+        return montantRallongeDS;
     }
 
-    public void setRallongeDS(float rallongeDS) {
-        this.rallongeDS = rallongeDS;
+    public void setMontantRallongeDS(float montantRallongeDS) {
+        this.montantRallongeDS = montantRallongeDS;
     }
 
     public Date getDateRallonge() {
@@ -38,7 +39,25 @@ public class RallongeDotationServ {
 
     @Override
     public String toString() {
-        return "RallongeDotationServ{" + "rallongeDS=" + rallongeDS + ", dateRallonge=" + dateRallonge + '}';
+        return "RallongeDotationServ{" + "rallongeDS=" + montantRallongeDS + ", dateRallonge=" + dateRallonge + '}';
+    }
+    
+    /**
+     * Get the value of etatRallonge
+     *
+     * @return the value of etatRallonge
+     */
+    public boolean isEtatRallonge() {
+        return etatRallonge;
+    }
+
+    /**
+     * Set the value of etatRallonge
+     *
+     * @param etatRallonge new value of etatRallonge
+     */
+    public void setEtatRallonge(boolean etatRallonge) {
+        this.etatRallonge = etatRallonge;
     }
     
     

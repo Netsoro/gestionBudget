@@ -10,21 +10,17 @@ import java.util.List;
 
 /**
  *
- * @author 21611856
+ * @author 21612584
  */
 public class Rubrique {
   private int codeR;
   private String  LibR;
   private String descR;
-  private final List<DotationGlobalService> listeDotationServ;
-  private final List<DotationRubriqueService> listeDotationRespServ;
-
+       
     public Rubrique(int codeR, String LibR, String descR) {
         this.codeR = codeR;
         this.LibR = LibR;
-        this.descR = descR;
-        this.listeDotationServ =  new ArrayList<DotationGlobalService> ();
-        this.listeDotationRespServ =  new ArrayList<DotationRubriqueService> ();
+        this.descR = descR;        
     }
 
     @Override
@@ -33,6 +29,7 @@ public class Rubrique {
     }
 
     
+
   
     /**
      * @return the codeR
@@ -74,20 +71,6 @@ public class Rubrique {
      */
     public void setDescR(String descR) {
         this.descR = descR;
-    }
-
-    /**
-     * @return the listeDotationServ
-     */
-    public List<DotationGlobalService> getListeDotationServ() {
-        return listeDotationServ;
-    }
-    
-     /**
-     * @return the listeDotationServ
-     */
-    public List<DotationRubriqueService>  getListeDotationRespServ() {
-        return listeDotationRespServ;
     }
   
 }

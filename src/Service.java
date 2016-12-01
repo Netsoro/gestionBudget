@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -79,7 +80,6 @@ public class Service {
     public List<DotationGlobalService> getListeDotationService() {
         return listeDotationService;
     }
-
     
     @Override
     public String toString(){
@@ -97,10 +97,51 @@ public class Service {
         
     public DotationGlobalService getDotationGlobalServiceByYear(int annee){
         
+        /* version 1
         for (DotationGlobalService dotationGS : listeDotationService ){
              if(dotationGS.getAnnee() == annee) return dotationGS;
         }
-        return null;
+        
+        */
+        
+       
+        int i = 0;
+        DotationGlobalService dotationGS =null;
+        while (i<listeDotationService.size()&& dotationGS == null){
+           
+            if(listeDotationService.get(i).getAnneeDS() == annee){
+                dotationGS = listeDotationService.get(i);
+            }
+            else{
+                i++;
+
+            }
+        }
+        /*
+        
+        ListIterator<DotationGlobalService> it = listeDotationService.listIterator();
+        DotationGlobalService dotationGS =null;
+        DotationGlobalService dotationRecherche = null;
+        while (it.hasNext() && dotationGS == null){
+            
+            dotationGS = it.next();
+            if(dotationGS.getAnnee() == annee){
+                dotationRecherche = dotationGS ;
+            }    
+        }
+        */
+        
+        return dotationGS;
+    }
+    
+    void afficher (){
+        System.out.println("IdService : "+this.idserv+ "\nNom sevice : "+ this.nomServ);
+        int i = 1;
+        for (DotationGlobalService dotationGS : listeDotationService ){
+            //System.out.println("Dotiaion n ° : " +i+ " => "+ dotationGS);
+            dotationGS.afficher();
+            i++;
+        }
     }
     
 }

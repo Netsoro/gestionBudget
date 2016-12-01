@@ -22,11 +22,22 @@ public class ExecutesMethode {
         
         s1.enregistrerNouvelleDotation(2016,1000);
         s1.enregistrerNouvelleDotation(2017,1100);
-                
-       // System.out.println(s1.getListeDotationService().get(0));
+        s1.enregistrerNouvelleDotation(2018,1890);
+        s1.enregistrerNouvelleDotation(2019,11650);
         
-        System.out.println(s1.getDotationGlobalServiceByYear(2016));
-        System.out.println(s1.getDotationGlobalServiceByYear(2017));
+        
+        DotationGlobalService dotattionGS = s1.getDotationGlobalServiceByYear(2030);
+        
+        if (dotattionGS != null){
+            System.out.println("Recherche dotation 2019 pour s1 : " + dotattionGS.getMontantDS());
+        }
+        else{
+            System.out.println("Cett dotation inexistant !");
+        }
+       // System.out.println(s1.getListeDotationService().get(0));
+        //System.out.println(s1.getDotationGlobalServiceByYear(20169));
+        //System.out.println(s1.getDotationGlobalServiceByYear(201722));
+        s1.afficher();
 
 
     }
