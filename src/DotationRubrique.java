@@ -18,14 +18,16 @@ public class DotationRubrique {
     private Rubrique rubriqueConcerner;
     private RallongeDotationServ rallongeCouvrir;
 
-
-    List<DepenseRubrique> listeDepenseRubrique;
+    private final List<RallongeDotationServ> listRallongeDs;
+    private final List<DepenseRubrique> listeDepenseRubrique;
 
     public DotationRubrique(float dotationRS, Rubrique rubrique, RallongeDotationServ rallongeCouvrir) {
         this.montantDotR = dotationRS;
         this.rubriqueConcerner = rubrique;
         this.rallongeCouvrir = rallongeCouvrir;
         this.listeDepenseRubrique =new ArrayList<DepenseRubrique>();
+        this.listRallongeDs = new ArrayList<RallongeDotationServ>();
+
     }
 
 
@@ -81,7 +83,14 @@ public class DotationRubrique {
         return depenseR;
     }
     
-    public void obtenirDotDispo(Rubrique rubrique){
+    /**
+     * @return the listRallongeDs
+     */
+    public List<RallongeDotationServ> getListRallongeDs() {
+        return listRallongeDs;
     }
+
+
+
     
 }

@@ -18,18 +18,15 @@ public class DotationGlobalService {
     private boolean etatDS;
 
  
-    private final List<RallongeDotationServ> listRallongeDs;
     private final List<DotationRubrique> listeDotationRS;
     
     public DotationGlobalService(){
-        listRallongeDs = new ArrayList<RallongeDotationServ>();
         listeDotationRS = new ArrayList<DotationRubrique>();
     }
 
     public DotationGlobalService(int annee ,float dotationGS ){
         this.anneeDS = annee;
         this.montantDS = dotationGS;
-        listRallongeDs = new ArrayList<RallongeDotationServ>();
         listeDotationRS = new ArrayList<DotationRubrique>();
     }
     
@@ -76,15 +73,6 @@ public class DotationGlobalService {
         this.montantDS = montantDS;
     }
 
-    /**
-     * @return the listRallongeDs
-     */
-    public List<RallongeDotationServ> getListRallongeDs() {
-        return listRallongeDs;
-    }
-
-
-
 
     public List<DotationRubrique> getListeDotationRS() {
         return listeDotationRS;
@@ -100,6 +88,23 @@ public class DotationGlobalService {
 
     public void setEtatDS(boolean etatDS) {
         this.etatDS = etatDS;
+    }
+    
+    public boolean enregistrerDotation(float montant, Rubrique rubrique, RallongeDotationServ rallonge){
+        
+        float mt = 0;
+        
+        for (DotationRubrique dotationRub : listeDotationRS ){
+            mt += dotationRub.getMontantDotR();
+        }
+        
+        if(montantDS - mt>=montant){
+             listeDotationRS.add(new DotationRubrique(montant,rubrique,rallonge));
+             return true;
+        }else{
+            return false;
+        }
+        
     }
     
 }
