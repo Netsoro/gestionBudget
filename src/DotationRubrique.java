@@ -89,6 +89,12 @@ public class DotationRubrique {
     public List<RallongeDotationServ> getListRallongeDs() {
         return listRallongeDs;
     }
+    
+    public RallongeDotationServ addNewRallonge(float montant){
+        RallongeDotationServ rallonge = new RallongeDotationServ(montant, new Date());
+        this.getListRallongeDs().add(rallonge);
+        return rallonge;
+    }
 
 
 
